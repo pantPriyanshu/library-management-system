@@ -1,0 +1,152 @@
+{
+  "info": {
+    "name": "Library Management API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Books",
+      "item": [
+        {
+          "name": "Get all books",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/books"
+          }
+        },
+        {
+          "name": "Get book by ID",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/books/:bookId"
+          }
+        },
+        {
+          "name": "Get available books",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/books/available"
+          }
+        },
+        {
+          "name": "Get borrowed books",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/books/borrowed"
+          }
+        },
+        {
+          "name": "Update book",
+          "request": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/api/books/:bookId"
+          }
+        },
+        {
+          "name": "Delete book",
+          "request": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/api/books/:bookId"
+          }
+        },
+        {
+          "name": "Search books",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/books/search"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Library",
+      "item": [
+        {
+          "name": "Borrow book",
+          "request": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/library/borrow",
+            "body": {
+              "mode": "raw",
+              "raw": "{ \"memberId\": 1, \"bookId\": \"ABC123\" }",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "Return book",
+          "request": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/library/return",
+            "body": {
+              "mode": "raw",
+              "raw": "{ \"memberId\": 1, \"bookId\": \"ABC123\" }",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Members",
+      "item": [
+        {
+          "name": "Get all members",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/members"
+          }
+        },
+        {
+          "name": "Get member by ID",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/members/:memberId"
+          }
+        },
+        {
+          "name": "Get member details",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/members/:memberId/details"
+          }
+        },
+        {
+          "name": "Update member",
+          "request": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/api/members/:memberId"
+          }
+        },
+        {
+          "name": "Delete member",
+          "request": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/api/members/:memberId"
+          }
+        },
+        {
+          "name": "Search members",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/members/search"
+          }
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8080"
+    }
+  ]
+}
